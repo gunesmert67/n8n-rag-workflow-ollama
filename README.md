@@ -10,7 +10,7 @@
 
 ---
 
-A fully **local, privacy-first RAG (Retrieval-Augmented Generation)** pipeline built with **n8n**, **Ollama**, and **Pinecone**. 
+A fully **local, privacy-first RAG (Retrieval-Augmented Generation)** pipeline built with **n8n**, **Ollama**, and **Pinecone**.
 
 Upload company documents to Google Drive → they are automatically indexed into Pinecone → chat with them using a local LLM — **no data ever leaves your machine** (except for Pinecone storage).
 
@@ -30,7 +30,7 @@ Upload company documents to Google Drive → they are automatically indexed into
 
 ## 🏗️ Architecture
 
-```
+```text
 Google Drive (watch folder)
         │
         ├─ File Created  ──┐
@@ -51,7 +51,7 @@ Chat Trigger  ──▶  AI Agent  ──▶  Vector Store Tool  ──▶  Pine
 ## 🛠️ Tech Stack
 
 | Component | Tool |
-|-----------|------|
+| --------- | ---- |
 | Workflow Automation | [n8n](https://n8n.io) |
 | Local LLM | [Ollama](https://ollama.com) — `llama3.1:latest` |
 | Embeddings | [Ollama](https://ollama.com) — `nomic-embed-text:latest` |
@@ -88,7 +88,7 @@ ollama pull nomic-embed-text
 In n8n, add the following credentials:
 
 | Credential | Details |
-|---|---|
+| --- | --- |
 | **Ollama** | Base URL: `http://localhost:11434` |
 | **Pinecone** | Your API Key |
 | **Google Drive** | OAuth2 credentials (see [n8n docs](https://docs.n8n.io/integrations/builtin/credentials/google/)) |
@@ -103,7 +103,7 @@ In n8n, add the following credentials:
    - **Pinecone nodes** → select your index name
 5. **Activate** the workflow
 
-### Step 5 — Add Documents & Chat!
+### Step 5 — Add Documents and Chat
 
 1. Drop any document (PDF, DOCX, TXT…) into your watched Google Drive folder
 2. The workflow auto-indexes it into Pinecone
@@ -144,7 +144,7 @@ Modify this to match your use case, language, and domain.
 
 ## 📁 Project Structure
 
-```
+```text
 n8n-rag-workflow-ollama/
 ├── workflow.json   # n8n workflow (import this)
 ├── README.md       # This file
@@ -168,7 +168,7 @@ Distributed under the MIT License. See [LICENSE](LICENSE) for more information.
 
 ## 👤 Author
 
-**Mert Güneş**
+### Mert Güneş
 
 - 🌐 Portfolio: [mertgunes.com](http://mertgunes.com/)
 - 💻 GitHub: [@gunesmert67](https://github.com/gunesmert67)
